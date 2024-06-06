@@ -1,0 +1,40 @@
+import java.util.*;
+public class lecture18 {
+    static void fun(int arr[], int n, int sum)
+    {
+        for (int i=0;i<n;i++)
+        {
+            int curr=arr[i];
+            if(sum==curr) {
+                System.out.println("sum found at index - " + i);
+                return;
+            }
+            else
+            {
+                for (int j=i+1;j<n;j++)
+                {
+                    curr+=arr[j];
+                    if(curr ==sum)
+                    {
+                        System.out.println("sum found between index " + i +" and "+j);
+                        return ;
+                    }
+                }
+            }
+        }
+        System.out.println("no sum found");
+        return;
+    }
+    public static void main (String[]ags){
+        System.out.println("hello world");
+        int n;
+        Scanner sc=new Scanner(System.in);
+        n= sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)
+            arr[i]=sc.nextInt();
+        int sum;
+        sum=sc.nextInt();
+        fun(arr,n,sum);
+    }
+}
