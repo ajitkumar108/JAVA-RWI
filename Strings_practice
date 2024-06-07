@@ -1,0 +1,59 @@
+import java.util.*;
+public class Main {
+    static boolean palindrome(String s,StringBuilder st)
+    {
+        String a;
+        return String.valueOf(st)==s;
+    }
+    static void fun(String str1,String str2)
+    {
+        char[] a = str1.toCharArray();
+        char[] b = str2.toCharArray();
+        Arrays.sort(a);
+        Arrays.sort(b);
+        if(Arrays.equals(a,b))
+            System.out.println("two strings are Anagram");
+        else
+            System.out.println("two strings are not Anagram");
+    }
+    static void vowel(String s)
+    {
+        int count=0;
+        for (int i=0;i<s.length();i++) {
+            char c=s.charAt(i);
+            if (c == 'a'|| c=='e'||c=='i'||c=='o'||c=='u')
+                count++;
+        }
+        System.out.println("total number of vowels are  "+count);
+    }
+    static void case_count(String s)
+    {
+        int up=0,low=0;
+        for (int i=0;i<s.length();i++)
+        {
+            char a=s.charAt(i);
+            if(a>='a'&&a<='z')
+                low++;
+            else
+                up++;
+        }
+        System.out.println("total lower case are "+low+" total upper case are "+up);
+    }
+    public static void main(String[]ags)
+    {
+        String s,str;
+        Scanner sc=new Scanner(System.in);
+        s=sc.nextLine();
+        str=sc.nextLine();
+        int n=s.length();
+        StringBuilder st=new StringBuilder();
+        st.append(s);
+        st.reverse();
+        System.out.println(n);
+        fun(s,str);
+        System.out.println(st);
+        System.out.println(palindrome(s,st));
+        vowel(s);
+        case_count(s);
+    }
+}
